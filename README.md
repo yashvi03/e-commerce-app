@@ -1,5 +1,7 @@
 **BookStop**
 
+**Link:** https://bookstop-e-commerce.netlify.app/cart
+
 **Description**</br>
 BookStop is an e-commerce platform for buying and managing books. It allows users to browse through various categories, add books to their cart, and make purchases. The app features a user-friendly interface with a responsive design and integrates with local storage to maintain the cart's state.
 
