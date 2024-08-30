@@ -1,0 +1,31 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e0ceba9e;
+    padding: 0px 12px;
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    font-size: 24px;
+    color: #684927;
+}
+
+.logo span{
+    font-weight: bold;
+}
+
+.nav-link{
+    margin-right: 48px;
+}
+
+.nav-links{
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links div:hover {
+    text-decoration: underline;
+  }
+  

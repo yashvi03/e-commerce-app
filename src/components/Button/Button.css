@@ -1,0 +1,23 @@
+.btn{
+    background-color: #164c5d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+a{
+    color:  #684927;
+    text-decoration: none;
+}
+
+
+
+
+
+

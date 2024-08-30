@@ -1,0 +1,12 @@
+.add-to-bag-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .add-to-bag-btn.added {
+    background-color: #28a745; /* Green color to indicate success */
+    cursor: default; /* Change cursor to default to indicate the button is no longer clickable */
+  }

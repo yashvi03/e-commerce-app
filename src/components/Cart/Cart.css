@@ -1,0 +1,76 @@
+/* General container for the cart */
+.cart {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header for the cart */
+.cart h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Styling for an empty cart message */
+.cart p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* List of cart items */
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+/* Styling for the cart item image */
+.cart-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+/* Content section of the cart item */
+.cart-item div {
+  flex-grow: 1;
+}
+
+/* Title and price styling */
+.cart-item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Remove button */
+.cart-item button {
+  background-color: #ff4c4c;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Remove button hover effect */
+.cart-item button:hover {
+  background-color: #e03a3a;
+}
+
+/* Total price styling */
+.cart h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+}
+

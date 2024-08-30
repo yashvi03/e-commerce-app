@@ -1,0 +1,28 @@
+.item-container{
+    border-radius: 24px;
+    background-color: #fffaf1;
+    width: 100%;
+    margin: 24px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.item-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.shop-main{
+    display: flex;
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px;
+    padding: 48px 64px;
+}
+
+.shop-container{
+    overflow: hidden;
+    height: 100vh;
+}
