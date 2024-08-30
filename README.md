@@ -4,7 +4,6 @@
 BookStop is an e-commerce platform for buying and managing books. It allows users to browse through various categories, add books to their cart, and make purchases. The app features a user-friendly interface with a responsive design and integrates with local storage to maintain the cart's state.
 
 **Features**</br>
-**Browse Books**: View books by category, popularity, and release date.</br>
 **Add to Cart**: Add books to your cart and see a real-time update.</br>
 **Remove from Cart**: Remove books from your cart.</br>
 **Total Price Calculation**: Automatically calculate the total price of the items in the cart.</br>
