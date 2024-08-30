@@ -1,23 +1,23 @@
 **BookStop**
 
-**Description**
+**Description**</br>
 BookStop is an e-commerce platform for buying and managing books. It allows users to browse through various categories, add books to their cart, and make purchases. The app features a user-friendly interface with a responsive design and integrates with local storage to maintain the cart's state.
 
-**Features**
-**Browse Books**: View books by category, popularity, and release date.
-**Add to Cart**: Add books to your cart and see a real-time update.
-**Remove from Cart**: Remove books from your cart.
-**Total Price Calculation**: Automatically calculate the total price of the items in the cart.
-**Local Storage**: Save the cart's state using local storage.
+**Features**</br>
+**Browse Books**: View books by category, popularity, and release date.</br>
+**Add to Cart**: Add books to your cart and see a real-time update.</br>
+**Remove from Cart**: Remove books from your cart.</br>
+**Total Price Calculation**: Automatically calculate the total price of the items in the cart.</br>
+**Local Storage**: Save the cart's state using local storage.</br>
 
-**Usage**
-**Homepage**: Browse books and view details.
-**Cart**: View and manage items in your cart.
-**Shop**: Filter books by categories and add them to the cart.
+**Usage**</br>
+**Homepage**: Browse books and view details.</br>
+**Cart**: View and manage items in your cart.</br>
+**Shop**: Filter books by categories and add them to the cart.</br>
 
-**Technologies Used**
-React
-JavaScript
-CSS
-Local Storage
-React Router
+**Technologies Used**</br>
+React</br>
+JavaScript</br>
+CSS</br>
+Local Storage</br>
+React Router</br>
