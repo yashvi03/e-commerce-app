@@ -1,8 +1,23 @@
-# React + Vite
+**BookStop**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Description**
+BookStop is an e-commerce platform for buying and managing books. It allows users to browse through various categories, add books to their cart, and make purchases. The app features a user-friendly interface with a responsive design and integrates with local storage to maintain the cart's state.
 
-Currently, two official plugins are available:
+**Features**
+**Browse Books**: View books by category, popularity, and release date.
+**Add to Cart**: Add books to your cart and see a real-time update.
+**Remove from Cart**: Remove books from your cart.
+**Total Price Calculation**: Automatically calculate the total price of the items in the cart.
+**Local Storage**: Save the cart's state using local storage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Usage**
+**Homepage**: Browse books and view details.
+**Cart**: View and manage items in your cart.
+**Shop**: Filter books by categories and add them to the cart.
+
+**Technologies Used**
+React
+JavaScript
+CSS
+Local Storage
+React Router
