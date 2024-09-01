@@ -1,4 +1,4 @@
-import { Outlet, useParams, Link } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import FetchData from "../FetchData";
 import Navbar from "../Navbar/Navbar";
@@ -17,8 +17,12 @@ const Purchase = () => {
     const fetchBook = async () => {
       try {
         const data = await FetchData();
-        const selectedBook = data.find((book) => book.id === id);
-        setBook(selectedBook);
+        const selectedBook = data.books.find((book) => book.id === id); 
+        if (selectedBook) {
+          setBook(selectedBook);
+        } else {
+          setError("Book not found");
+        }
       } catch (err) {
         setError(err.message);
       } finally {
@@ -27,7 +31,7 @@ const Purchase = () => {
     };
 
     fetchBook();
-  }, [id]);
+  }, [id]); 
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -46,7 +50,7 @@ const Purchase = () => {
         <div className="right">
           <p className="book-title">{book.title}</p>
           <p className="author">{book.author}</p>
-          <p className="price">${book.price}</p>
+          <p className="price">Rs.{book.price}</p>
           <p className="desc">{book.description}</p>
           <em className="genre">{book.category}</em>
         </div>

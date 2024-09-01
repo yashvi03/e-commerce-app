@@ -1,17 +1,14 @@
 import { createContext, useState, useEffect } from "react";
 
-// Create the context
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
-    // Load cart from local storage if available
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
   useEffect(() => {
-    // Save cart to local storage whenever it changes
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 

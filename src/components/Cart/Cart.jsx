@@ -23,7 +23,7 @@ const Cart = () => {
                     <img src={book.image} alt={book.title} />
                     <div>
                       <p>{book.title}</p>
-                      <p>${book.price}</p>
+                      <p>Rs.{book.price}</p>
                     </div>
                     <button onClick={() => removeFromCart(book.id)}>
                       Remove

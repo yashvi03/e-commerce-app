@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import Side_Nav from "../Side_Nav/Side_Nav";
-import Cards from "../Cards/Cards"; // Make sure this path is correct
+import Cards from "../Cards/Cards";
 import "./Shop.css";
 import FetchData from "../FetchData";
 
@@ -13,11 +13,11 @@ const Shop = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await FetchData();
-      setBooks(data);
+      setBooks(data.books);  
 
       const uniqueCategories = [
         "all",
-        ...new Set(data.flatMap((book) => book.category.split(" "))),
+        ...new Set(data.books.flatMap((book) => book.category.split(" "))),
       ];
       setCategories(uniqueCategories);
     };
@@ -31,7 +31,7 @@ const Shop = () => {
 
   const filteredBooks = books.filter((book) => {
     if (selectedCategory === "" || selectedCategory === "all") {
-      return books;
+      return true;  // Return true to include all books
     }
 
     if (book.category.split(" ").includes(selectedCategory)) {
