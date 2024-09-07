@@ -1,8 +1,8 @@
-const url = "http://localhost:5000/api/books";
+const url = "https://e-commerce-backend-5-whqr.onrender.com/";
 
 const FetchData = async () => {
   try {
-    const response = await fetch(url, { mode: 'cors' });
+    const response = await fetch(url, { mode: 'cors' })
 
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -28,6 +28,7 @@ const FetchData = async () => {
     console.error('FetchData error:', error);
     return null; // or you could return an empty object or array depending on your use case
   }
-};
+  
+}
 
 export default FetchData;
