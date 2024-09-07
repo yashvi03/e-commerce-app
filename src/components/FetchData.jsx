@@ -1,4 +1,4 @@
-const url = "https://e-commerce-backend-4-05an.onrender.com/";
+const url = "https://e-commerce-backend-4-05an.onrender.com/books";
 
 const FetchData = async () => {
   try {
