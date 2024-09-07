@@ -11,7 +11,7 @@ const Purchase = () => {
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, isBookInCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -31,11 +31,13 @@ const Purchase = () => {
     };
 
     fetchBook();
-  }, [id]); 
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!book) return <p>Book not found.</p>;
+
+  const isAdded = isBookInCart(book.id);
 
   return (
     <div>
@@ -43,8 +45,12 @@ const Purchase = () => {
       <div className="book-details">
         <div className="left">
           <img className="book-image" src={book.image} alt={book.title} />
-          <Button className="add" onClick={() => addToCart(book)}>
-            Add <i className="fa-solid fa-bag-shopping"></i>
+          <Button
+            className={isAdded ? "added" : "add"}
+            onClick={() => addToCart(book)}
+            disabled={isAdded}
+          >
+            {isAdded ? "Added" : "Add"} <i className="fa-solid fa-bag-shopping"></i>
           </Button>
         </div>
         <div className="right">

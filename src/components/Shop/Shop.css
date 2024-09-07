@@ -4,7 +4,7 @@
     width: 100%;
     margin: 24px;
     overflow-y: auto;
-    height: 100vh;
+    max-height: calc(100vh - 64px);
 }
 
 .item-container::-webkit-scrollbar {
@@ -20,6 +20,7 @@
     flex-wrap: wrap;
     gap: 64px;
     padding: 48px 64px;
+   
 }
 
 .shop-container{

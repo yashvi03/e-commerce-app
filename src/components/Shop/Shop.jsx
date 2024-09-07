@@ -9,14 +9,15 @@ const Shop = () => {
   const [books, setBooks] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [categoryType, setCategoryType] = useState("category"); 
 
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await FetchData();
-      setBooks(data.books);  
+      setBooks(data.books);
 
       const uniqueCategories = [
-        "all",
+        'all',
         ...new Set(data.books.flatMap((book) => book.category.split(" "))),
       ];
       setCategories(uniqueCategories);
@@ -25,33 +26,60 @@ const Shop = () => {
     fetchBooks();
   }, []);
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category, type) => {
     setSelectedCategory(category);
+    setCategoryType(type);
   };
 
   const filteredBooks = books.filter((book) => {
-    if (selectedCategory === "" || selectedCategory === "all") {
-      return true;  // Return true to include all books
+    const parseDate = (dateStr) => {
+      const [day, month, year] = dateStr.split("-").map(Number);
+      return new Date(year, month - 1, day);
+    };
+
+    const today = new Date();
+
+    let startDate = new Date();
+    let endDate = new Date();
+
+    if (selectedCategory === "all") {
+      return true; // Return true to include all books
     }
 
-    if (book.category.split(" ").includes(selectedCategory)) {
-      return true;
-    }
-    if (["Last 30 days", "This week", "Next Week"].includes(selectedCategory)) {
-      return book.releaseDateCategory === selectedCategory;
-    }
+    if (categoryType === "time") {
+      if (
+        ["Last 30 days", "This week", "Next Week"].includes(selectedCategory)
+      ) {
+        switch (selectedCategory) {
+          case "Last 30 days":
+            startDate.setDate(startDate.getDate() - 30);
+            endDate = today;
+            break;
+          case "This week":
+            startDate.setDate(startDate.getDate() - today.getDay()); // Start of the week
+            endDate = new Date(startDate);
+            endDate.setDate(startDate.getDate() + 7); // End of the week
+            break;
+          case "Next Week":
+            startDate.setDate(startDate.getDate() + (7 - today.getDay())); // Start of next week
+            endDate = new Date(startDate);
+            endDate.setDate(startDate.getDate() + 7); // End of next week
+            break;
+          default:
+            break;
+        }
 
-    if (
-      ["Best this year", "Popular in 2023", "All time Top"].includes(
-        selectedCategory
-      )
-    ) {
+        const releaseDate = parseDate(book.releasedDate);
+        return startDate <= releaseDate && releaseDate <= endDate;
+      }
+    } else if (categoryType === "recommendation") {
       return book.recommendation === selectedCategory;
+    } else {
+      return book.category.split(" ").includes(selectedCategory);
     }
 
     return false;
-  });
-
+  });  
   return (
     <div className="shop-container">
       <Navbar />
@@ -62,9 +90,11 @@ const Shop = () => {
         />
         <div className="item-container">
           <div className="cards-container">
-            {filteredBooks.map((book) => (
-              <Cards key={book.id} book={book} />
-            ))}
+            {filteredBooks.length > 0 ? (
+              filteredBooks.map((book) => <Cards key={book.id} book={book} />)
+            ) : (
+              <p>No books available for this category.</p>
+            )}
           </div>
         </div>
       </div>
