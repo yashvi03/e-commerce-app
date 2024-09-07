@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/books";
+const url = "https://localhost:5000/books";
 
 const FetchData = async () => {
   try {
