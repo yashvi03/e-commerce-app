@@ -26,7 +26,8 @@ const FetchData = async () => {
     return obj;
   } catch (error) {
     console.error('FetchData error:', error);
-    return null; // or you could return an empty object or array depending on your use case
+    return { books: [] }; 
+  }
   }
   
 }
