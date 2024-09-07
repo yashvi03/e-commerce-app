@@ -13,9 +13,9 @@ const FetchData = async () => {
       books: data.map((book) => ({
         id: book.id,
         title: book.title,
-        author: book.author, // Assuming there's an 'author' field in the book object
+        author: book.author, 
         price: book.price,
-        description: book.description, // Assuming there's a 'description' field in the book object
+        description: book.description, 
         image: book.image,
         category: book.category,
         releasedDate: book.releasedDate,
